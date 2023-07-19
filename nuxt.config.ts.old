@@ -1,0 +1,55 @@
+// nuxt.config.js
+import { defineNuxtConfig } from 'nuxt';
+export default defineNuxtConfig({
+    app: {
+        head: {
+            "meta": [
+                {
+                    "name": "viewport",
+                    "content": "width=device-width, initial-scale=1"
+                },
+                {
+                    "charset": "utf-8"
+                }
+            ],
+            script: [
+                { src: '/plugins/jquery/jquery.min.js' },
+                { src: '/plugins/bootstrap/js/bootstrap.bundle.min.js' },
+                { src: '/dist/js/adminlte.min.js'   }
+            ],
+            link: [
+                { rel: 'icon', type: 'image/x-icon', href: '/img/favicon.png' },
+                {
+                    rel: 'stylesheet',
+                    type: 'text/css',
+                    href:"https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback",
+                },
+                {
+                    rel: 'stylesheet',
+                    type: 'text/css',
+                    href:"plugins/fontawesome-free/css/all.min.css",
+                },
+                {
+                    rel: 'stylesheet',
+                    type: 'text/css',
+                    href:"plugins/icheck-bootstrap/icheck-bootstrap.min.css",
+                },
+                {
+                    rel: 'stylesheet',
+                    type: 'text/css',
+                    href:"dist/css/adminlte.min.css",
+                },
+
+            ],
+        }
+    },
+    modules: [
+        [
+            '@pinia/nuxt',
+            {
+                autoImports: ['defineStore', 'acceptHMRUpdate'],
+            },
+        ],
+    ],
+
+})
